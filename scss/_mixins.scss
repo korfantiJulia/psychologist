@@ -1,1 +1,18 @@
 @use "variables";
+
+@mixin display-flex($justify-content) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: center;
+}
+
+@mixin button($bg-color) {
+  width: 250px;
+  height: 40px;
+  color: variables.$primary-text-color;
+  background-color: $bg-color;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}

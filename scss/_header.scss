@@ -1,0 +1,59 @@
+@use "variables";
+@use "mixins";
+
+.header {
+  width: auto;
+  height: 768px;
+  background-image: url(../img/main_photo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 54px 135px 0;
+
+  &__logo {
+    display: block;
+    width: 200px;
+  }
+
+  .nav {
+    @include mixins.display-flex(space-between);
+
+    &__list {
+      display: flex;
+      gap: 15px;
+    }
+
+    &__item-link {
+      color: variables.$primary-brand-color;
+      font-size: 18px;
+      transition: all 0.5s;
+
+      &:hover {
+        color: variables.$accent-brand-color;
+      }
+
+      &--active {
+        color: variables.$accent-brand-color;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__title {
+    width: 500px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    margin-top: 140px;
+    margin-bottom: 55px;
+  }
+
+  &__desc {
+    font-size: 24px;
+    margin-bottom: 55px;
+  }
+
+  &__button {
+    @include mixins.button(variables.$brand-color-dark);
+  }
+}
