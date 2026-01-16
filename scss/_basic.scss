@@ -1,2 +1,12 @@
 @use "variables";
 @use "mixins";
+
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: variables.$primary-text-color;
+  margin: 0;
+}
