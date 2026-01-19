@@ -16,3 +16,29 @@
   cursor: pointer;
   transition: all 0.5s;
 }
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == xl {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == md {
+    @media (max-width: 670px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == sm {
+    @media (max-width: 470px) {
+      @content;
+    }
+  }
+}

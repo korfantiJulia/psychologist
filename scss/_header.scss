@@ -8,11 +8,15 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 54px 135px 0;
+  padding: 54px 135px 160px;
 
   &__logo {
     display: block;
     width: 200px;
+
+    @include mixins.respond(xl) {
+      width: 150px;
+    }
   }
 
   .nav {
@@ -36,6 +40,10 @@
         color: variables.$accent-brand-color;
         text-decoration: underline;
       }
+
+      @include mixins.respond(xl) {
+        font-size: 16px;
+      }
     }
   }
 
@@ -46,14 +54,35 @@
     font-size: 48px;
     margin-top: 140px;
     margin-bottom: 55px;
+
+    @include mixins.respond(xl) {
+      font-size: 40px;
+    }
+
+    @include mixins.respond(lg) {
+      margin-top: 70px;
+    }
   }
 
   &__desc {
     font-size: 24px;
     margin-bottom: 55px;
+    @include mixins.respond(xl) {
+      font-size: 20px;
+    }
   }
 
   &__button {
     @include mixins.button(variables.$brand-color-dark);
+  }
+
+  @include mixins.respond(xl) {
+    padding-left: 50px;
+    padding-right: 50px;
+    height: auto;
+  }
+
+  @include mixins.respond(lg) {
+    padding-bottom: 80px;
   }
 }
