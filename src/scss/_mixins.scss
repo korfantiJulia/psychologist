@@ -1,0 +1,44 @@
+@use "variables";
+
+@mixin display-flex($justify-content) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: center;
+}
+
+@mixin button($bg-color) {
+  width: 250px;
+  height: 40px;
+  color: variables.$primary-text-color;
+  background-color: $bg-color;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == xl {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == md {
+    @media (max-width: 670px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == sm {
+    @media (max-width: 470px) {
+      @content;
+    }
+  }
+}
